@@ -1,0 +1,204 @@
+\section{Introduction \label{sec:intro}}
+
+
+
+Although more than 80\% of the matter in the Universe is dark matter (DM/$\chi$), its 
+underlying nature remains unknown and cannot be explained within the standard 
+model (SM). If non-gravitational interactions exist between dark matter and 
+standard model particles, dark matter particles could be produced at the LHC. 
+One way to observe them is when the dark matter particles are produced in 
+association with a visible SM particle X (=g, q, $\gamma$, Z, W, or 
+Higgs). 
+%Such reactions, which are observed at colliders as particles or jets 
+%recoiling against an invisible state, are called “mono-X” or \MET+X. 
+%
+%
+The SM particle X could be emitted directly from a quark as initial state 
+radiation (ISR) or as part of new effective vertex coupling of DM to SM. Unlike
+W, Z, jet, or $\gamma$, Higgs ISR is highly suppressed, which implies that 
+mono-Higgs signal could probe directly the structure of the effective DM-SM 
+coupling. 
+%This document describe the analysis of the search for dark matter candidate in 
+%mono Higgs events using the 2015 LHC data collected by the CMS detector.
+
+In this document, we present a search for dark matter in mono Higgs events 
+via the decay mode $\Ph\rightarrow b\bar{b}$. This analysis is based on 
+integrated luminosities of 2.2 \fbinv of pp collisions at $\sqrt{s}=13\TeV$, 
+collected in 2015 with the CMS detector. 
+%
+%Our analysis is sub-divided into
+%two regimes: (i) non-boosted regime where the Higgs boson is reconstructed by 
+%two separate b-jets with a jet radius of $\Delta R=0.4$, and (ii) boosted 
+%regime where the Higgs boson is reconstructed by one single jet with a jet 
+%radius of $\Delta R = 0.8$ and jet substructure variables are employed to 
+%improve the separation of signal and background.
+%
+At the LHC, searches for dark matter in mono Higgs events had been performed 
+by the ATLAS Collaboration using 20~\fbinv of $\sqrt{s}=8\TeV$ data, 
+via the decay mode $\Ph\rightarrow \gamma\gamma$~\cite{ATLASHAA} and 
+$\Ph\rightarrow b\bar{b}$~\cite{ATLASHBB}. Limits were set as a function 
+of DM mass and parameters in various DM models. In Run 1, the CMS 
+Collaboration had not yet performed any mono-Higgs searches.
+
+
+%This note is organized as follows: Section~\ref{sec:model} gives more details of the
+%2HDM, Section~\ref{sec:dec} describes the CMS detector while Sections~\ref{sec:samples}--\ref{sec:sel} 
+%list the data and simulated samples used in this analysis, the triggers, and the
+%reconstruction of objects and event selection, respectively. Sections~\ref{sec:bkgcontrol} and \ref{sec:sig} 
+%detail the estimation of background and the extraction of signal. 
+%The systematic uncertainties are discussed in Section~\ref{sec:sys} while the results 
+%and conclusion are presented in Sections~\ref{sec:results} and \ref{sec:con}.
+
+
+%The interpretation of the dark matter signal is usually performed with
+%two approaches: (i) effective field theories (EFTs), and (ii) simplified models. 
+%
+%The EFTs assume that DM couples directly to SM particles through a
+%contact interaction involving a quark-antiquark pair, or two gluons,
+%and two DM particles and the X particle. The contact interaction 
+%is described by non-renormalizable n-dimensional operators. 
+%Various EFTs operators for the mono-H search are introduced 
+%and discussed in detail in Ref.~\cite{Irvine}.
+%The EFTs are valid when the mediators of the interaction between SM and DM 
+%particles are very heavy; if this is not the case, models that explicitly include 
+%these mediators are needed (simplified models). 
+%
+%
+%The ATLAS-CMS DM forum paper~\cite{ATLASCMS-DM} recommends three 
+%benchmark simplified models for the mono-H searches. 
+%\begin{itemize}
+%\item A model where a vector mediator ($\cPZpr_{B}$ ) is exchanged in
+%  the s-channel, radiates a Higgs boson, and decays into two DM
+%  particles. In this model, the couplings of the $\cPZpr_{B}$ to
+%  leptons are omitted.
+%%
+%\item A model where a scalar mediator $S$ is emitted from the Higgs
+%  boson and decays to a pair of DM particles.
+%%
+%\item  A model where a vector \cPZpr\ is produced resonantly and
+%  decays into a Higgs boson plus an intermediate heavy pseudoscalar
+%  particle \Az, in turn decaying into two DM particles, see Fig.~\ref{fig:feynman}.
+%\end{itemize}
+
+
+
+%We interpret our data with a benchmark model: two Higgs doublet model 
+%(2HDM)~\cite{2HDM}. 
+%In this model, a vector \cPZpr\ is produced resonantly and decays into
+%a Higgs boson plus an intermediate heavy pseudoscalar particle \Az, in
+%turn decaying into two DM particles, see Fig.~\ref{fig:feynman}.
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.5\textwidth]{Figures/feynman_2HDM.pdf}
+   \caption{Feynman diagram of a two higgs doublet model with a new
+     invisibly decaying pseudoscalar \Az from the decay of an on-shell
+     resonance \cPZpr\  giving rise to a Higgs+\MET signature. }
+   \label{fig:feynman}
+\end{figure}
+
+We interpret our data with a benchmark simplified model: two Higgs doublet model 
+(2HDM)~\cite{2HDM}. 
+%For the first results, we focus on the two Higgs
+%doublet model (2HDM)~\cite{2HDM}, 
+where a vector \cPZpr\ is produced resonantly and 
+decays into a Higgs boson plus an intermediate heavy pseudoscalar particle \Az, in turn decaying into two DM particles, see Fig.~\ref{fig:feynman}. 
+%
+%since the 2HDM is expected to produce, on average, a higher \MET value compared to the other two models due to
+%the on-shell \cPZpr\ production, see Fig.~\ref{fig:METmodel}. 
+%
+A Type-2 two higgs doublet is assumed, where 
+$\Phi_u$ couples to up-type quarks and $\Phi_d$ couples to down-type
+quarks and leptons. The gauge symmetry of the SM is extended by a
+$U(1)_{\cPZpr}$, with a new massive \cPZpr\ gauge boson. In this 2HDM
+model, only $\Phi_u$  and right-handed up-type quarks $u_R$ are charged 
+under the $U(1)_{\cPZpr}$ while $\Phi_d$ and  all the other SM
+fermions are neutral. 
+
+After electroweak symmetry breaking, the Higgs doublets attain vacuum 
+expectation values $v_u$ and $v_d$, and in unitary gauge the doublets are
+parametrized as
+
+\[
+\Phi_d = \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+ -\sin\beta~\PH^+\\
+v_d - \sin\alpha~\Ph + cos\alpha~\PH - i \sin\beta~\Az
+\end{pmatrix},
+\]
+
+
+\[
+\Phi_u = \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+ -\cos\beta~\PH^+\\
+v_u + \cos\alpha~\Ph + sin\alpha~\PH + i \cos\beta~\Az
+\end{pmatrix},
+\]
+
+where \Ph, \PH\ are neutral CP-even scalars, \Hpm\ is a charged scalar,
+and \Az\ is a neutral CP-odd scalar. In this framework,
+$\tan\beta\equiv v_u/v_d$, and $\alpha$ is the mixing angle that diagonalizes
+the $\Ph-\PH$ mass squared matrix. This model also contains an
+additional scalar singlet $\phi$ that leads to spontaneous symmetry
+breaking. The $\alpha$ is assigned to be $\alpha = \beta - \pi/2$, 
+in the limit where the \Ph\ has SM-like couplings to fermions and gauge
+bosons, and $\tan \beta \geq 0.3$ as implied from the perturbativity
+of the top Yukawa coupling. 
+
+The model is described by five parameters, namely, (i) the pseudoscalar mass $M_{\Az}$, (ii)the DM mass $M_{\chi}$, (iii) the \cPZpr\ mass $M_{\cPZpr}$,
+(iv) $\tan \beta$, and (v) the  \cPZpr\ coupling strength $g_z$.
+However, only the masses $M_{\Az}$ and $M_{\cPZpr}$ affect the 
+kinematic distributions and all the other parameters affect the cross sections and decay widths only. 
+
+%% following text is about final state
+
+\par The  transverse momentum of the Higgs boson is directly proportional to the mass of the $Z`$ ($M_{\cPZpr}$). 
+The spatial distance ($\Delta R = \sqrt{ \Delta\eta^2 + \Delta \phi^2  }$) 
+between the decay products of the Higgs boson ($\b\bar{b}$) follows the relation $\Delta R = 2 \times M_{H}/p_{H}$. 
+The present search analysis consider $M_{\cPZpr}$ ranging from 
+600 GeV -- 2500 GeV which implies a very wide range of transverse momentum of the Higgs boson and $\Delta R(b\bar{b})$. 
+Therefore the analysis is divided into two regimes : (i) non-boosted regime where the Higgs boson is reconstructed by two separate b-jets with a jet radius of $\Delta R =$ 0.4, (see section \ref{eventreco})
+and (ii) boosted regime where the Higgs boson is reconstructed by one single jet with a jet radius $\Delta R =$ 0.8. 
+%The efficiency to reconstruct the Higgs boson using to resolved AK04 jets drops when $M_{\cPZpr}$ $>$ 1000 GeV as the two b-jets start to merge into each other. 
+%Therefore these merged jets are reconstructed using larger jet-size parameter (R=0.8), AK08 jets. 
+
+%The decay width of $\cPZpr\rightarrow \Ph
+%\Az$ is:
+%\begin{equation}
+%\Gamma_{\cPZpr\rightarrow\Ph\Az}= \left(g_z
+%  \cos\alpha\cos\beta\right)^2 \frac{\left | p\right|}{24\pi}\frac{\left | p\right| ^2}{M_{\cPZpr}^2},
+%\end{equation}
+%where $|p|$ is the center of mass momentum for the decay products
+%
+%\[
+% |p| = \frac{1}{2M_{\cPZpr}} \sqrt{
+%   \left(M_{\cPZpr}^2-\left(m_{\Ph}+m_{\Az}\right)^2\right) 
+%\left(M_{\cPZpr}^2-\left(m_{\Ph}-m_{\Az}\right)^2\right)}.
+%\]
+%
+%
+%The coupling $g_z$ is constrained by electroweak global fits and
+%searches for dijet resonances from $\cPZpr\rightarrow q\bar{q}$:
+%\begin{equation}
+%g_z < 0.03 \cdot \frac{g}{\cos\theta_w \sin^2\beta}{\frac{\sqrt{M_{\cPZpr}^2 - M_Z^2}}{M_Z}.\label{eq:gz}
+%\end{equation}
+%The cross sections listed in Section~\ref{sec:sigSamp} were computed assuming the upper
+%limit of $g_Z$ in Eqn~\ref{eq:gz}.
+%
+%
+%\begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.4\textwidth]{Figures/signal-model/METhighM.pdf}
+%   \includegraphics[width=0.4\textwidth]{Figures/signal-model/METlowM.pdf}
+%   \caption{ Comparison of the \MET distributions at generator level
+%     in different simplified models leading to a Higgs+\MET 
+%       signature~\cite{ATLASCMS-DM}, for high mediator mass at 1 TeV
+%       (left) and low mediator mass at 100 GeV (right). In both cases,
+%     the DM particles are produced on-shell from the mediators.}
+%   \label{fig:METmodel}
+%\end{figure}
+%
+
+
+
