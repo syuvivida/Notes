@@ -1,0 +1,26 @@
+\section{Simulated samples}
+\label{sec:simulatedsamples}
+
+The bulk graviton model 
+% the Randall-Sundrum graviton model (RS1) %%% Thiago: is this actually used?
+and the HVT model (\PWpr{}) are used as benchmark signal processes.
+In these models, the vector gauge bosons are produced with a longitudinal polarisation ($\mathrm{V}_{\mathrm{L}}$) in more than 99\% of the cases.
+% while in the RS1 model, their polarisation is transverse ($\mathrm{V}_{\mathrm{T}}$) in more than 90\% of the cases.
+For the HVT model, a scenario (model B) is chosen where the \PWpr{} predominantly couple to bosons; that scenario is the most representative of a composite Higgs model.
+Different mass hypotheses are considered for the posited resonance, in the range 800 to 4500\GeV.
+Simulated signal samples are generated with the leading-order (LO) mode of \amcatnlo{} v5.2.2.2~\cite{Alwall:2014hca} with a relative resonance width of 0.1\%.
+We restrict the analysis to scenarios where the natural width of the resonance is sufficiently small to be neglected when compared to the detector resolution.
+This makes our modelling of the detector effects on the signal shape independent of the actual model used for generating the events.
+
+Monte Carlo simulated samples (MC) of the SM background processes are used to optimise the analyses.
+The W+jets and Z+jets SM processes are simulated with \amcatnlo{},
+while \ttbar and single top quark events are generated with \POWHEG v2~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd,Alioli:2009je,Re:2010bp,Alioli:2011as}
+and \amcatnlo{}. %%% Thiago: is this true?
+Diboson (WW, WZ, and ZZ) processes are produced with \PYTHIA v8.205 \cite{Sjostrand:2006za,Sjostrand:2007gs}. 
+The parton showering and hadronisation are performed with \PYTHIA using the CUETP8M1 tune~\cite{Skands:2014pea,CMS-PAS-GEN-14-001}.
+The NNPDF 3.0~\cite{Ball:2011mu} parton distribution functions (PDF) are used in all generated samples. 
+All generated samples are processed through a \GEANTfour-based~\cite{Agostinelli:2002hh} simulation of the CMS detector. 
+The simulated background samples are normalised using inclusive cross sections calculated at next-to-leading order (NLO), or
+next-to-next-to-leading order (NNLO) where available, calculated with \textsc{mcfm} v6.6 \cite{MCFM:VJets,MCFM:VV,Campbell:2012uf,MCFM:SingleTop} and \textsc{fewz} v3.1 \cite{FEWZ3}.
+
+Supplementary minimum bias interactions are added to the generated events in order to match the additional particle production observed in data from the large number of proton-proton interactions occurring per LHC bunch crossing (pileup). The simulated samples are corrected for observed differences between data and simulation in the efficiencies of lepton trigger, lepton identification/isolation, and selection criteria identifying jets originating from hadronisation of b quarks (b jets).

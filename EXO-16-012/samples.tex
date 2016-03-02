@@ -1,0 +1,282 @@
+\section{Datasets and Samples \label{sec:samples}}
+\newcommand{\tus}{\underline{{ }{ }}}
+
+\par The studies described in the document uses the $pp$ collision data at 25 $ns$ bunch-crossing collected by CMS detector at $\sqrt{s}$  = 13 TeV 
+which corresponding to an integrated luminosity of 
+2.26 $fb^{-1}$. List of good quality runs (and lumi-sections) were taken from the latest JSON file (Cert\_246908-260627\_13TeV\_PromptReco\_Collisions15\_25ns\_JSON\_v2.txt) which has runs when all the sub-detectors were on and functional, hence good 
+quality data can be assured. The dataset used are listed in table \ref{tab:dataset} with integrated luminosity. Most recent re-recoed datasets have been used whenever available, 
+failing to do that prompt-reco datasets have been used. 
+
+
+
+\begin{table}[htbp]\centering
+\caption{List of dataset used along with their integrated luminosity and run-range. Total of 2.26 $fb^{-1}$ is used.}. \label{tab:dataset}}
+\begin{tabular}{|c|c|c|}
+ \hline
+ Dataset & lumi (in $pb^{-1}$) & run range\\
+\hline
+/MET/Run2015C\_25ns-05Oct2015-v1/MINIAOD & 17.22  & 254231--254914\\
+/MET/Run2015D-05Oct2015-v1/MINIAOD & 575.34  & 256630--258158\\ 
+/MET/Run2015D-PromptReco-v4/MINIAOD & 1670.52  & 258159--260627\\
+\hline
+Total luminosity & 2263.55 &  254231-260627 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\par All studies described in this note use the Spring15 Monte Carlo samples (see Table~\ref{tab:MonoHSamples}), unless explicitly indicated. 
+%These samples were generated and simulated using CMSSW\tus{}7\tus{}4\tus{}1 and reconstructed using CMSSW\tus{}7\tus{}4\tus{}12. 
+These samples were generated and simulated using CMSSW\tus{}7\tus{}1\tus{}15\tus{}patch1 (some with CMSSW\tus{}7\tus{}1\tus{}16\tus{}patch2) 
+and reconstructed using CMSSW\tus{}7\tus{}4\tus{}1\tus{}patch4. 
+The samples were used in the MINIAODSIM v2 format \cite{miniaodtwiki}, which is standard format for physics analyses in Run 2. 
+% All the samples were produced using the similar configuration as other official MC samples for Run 2 (at $\sqrt{s}$ = 13 TeV) \unit{25}{ns} operation. 
+
+We considered  all relevant SM backgrounds -- W($\rightarrow l \nu$)+Jets and Z($\rightarrow \nu\nu$)+Jets production, \ttbar{} and single top production, and non-resonant diboson production
+ i.e. ZZ, WW, WZ. 
+The \pt spectra of the W and Z bosons in data are known to be non-perfectly 
+described by the leading order (LO) \MADGRAPH MC samples. Therefore, 
+we apply two corrections to take into account the effects of: (i) QCD NLO 
+processes, and (ii) NLO electroweak contributions. The first correction 
+is derived for four different \HT bins (see Table~\ref{tab:kfactors}) 
+while the second correction is derived as a function of boson \pt at the 
+generator-level (see Fig~\ref{fig:ewk}). The correction factors are 
+multiplicative factors. 
+More details could be found in Ref.~\cite{AN-2015-186}.
+
+
+\begin{table}[htbp]
+\footnotesize
+\centering
+\topcaption{Signal and Background samples \label{tab:MonoHSamples}}
+\begin{tabular}{lrr}
+%\textbf{Sample name} & \textbf{Cross section[pb]} & \textbf{N\textsubscript{events}} \\
+\textbf{Sample name} & \textbf{Cross section[pb]} & \textbf{N events} \\
+\hline
+\bf{Privately produced signal samples}  &  - & - \\
+\hline
+MonoHToBBbar\tus{}MZP\tus{}600GeV\tus{}MA0\tus{}300GeV\tus{}madgraph  & 0.0260   & - \\
+MonoHToBBbar\tus{}MZP\tus{}800GeV\tus{}MA0\tus{}300GeV\tus{}madgraph  & 0.0288  & - \\
+MonoHToBBbar\tus{}MZP\tus{}1000GeV\tus{}MA0\tus{}300GeV\tus{}madgraph & 0.0234  & - \\
+MonoHToBBbar\tus{}MZP\tus{}1200GeV\tus{}MA0\tus{}300GeV\tus{}madgraph & 0.0183  & - \\
+MonoHToBBbar\tus{}MZP\tus{}1400GeV\tus{}MA0\tus{}300GeV\tus{}madgraph & 0.0136  & - \\
+MonoHToBBbar\tus{}MZP\tus{}1700GeV\tus{}MA0\tus{}300GeV\tus{}madgraph & 0.00871 & - \\
+MonoHToBBbar\tus{}MZP\tus{}2000GeV\tus{}MA0\tus{}300GeV\tus{}madgraph & 0.00561 & - \\
+MonoHToBBbar\tus{}MZP\tus{}2500GeV\tus{}MA0\tus{}300GeV\tus{}madgraph & 0.00280 & - \\
+\hline
+ST\tus{}s-channel\tus{}4f\tus{}leptonDecays\tus{}13TeV-amcatnlo-pythia8                            & 3.36                  &  -   \\
+ST\tus{}t-channel\tus{}top\tus{}4f\tus{}leptonDecays\tus{}13TeV-powheg-pythia8                     & 44.33                 &  - \\
+ST\tus{}t-channel\tus{}antitop\tus{}4f\tus{}leptonDecays\tus{}13TeV-powheg-pythia8                 & 26.38 & - \\
+ST\tus{}tW\tus{}top\tus{}5f\tus{}inclusiveDecays\tus{}13TeV-powheg-pythia8                         & 35.6 & - \\
+ST\tus{}tW\tus{}antitop\tus{}5f\tus{}inclusiveDecays\tus{}13TeV-powheg-pythia8                     & 35.6 & - \\
+\hline
+TTJets\tus{}MSDecaysCKM\tus{}central\tus{}TuneCUETP8M1\tus{}13TeV-madgraph-tauola		& 831.76	& 25446880 \\
+\hline
+WJetsToLNu\tus{}HT-100to200\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8				& 1345	& 5262265 \\
+WJetsToLNu\tus{}HT-200to400\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8				& 359.7	& 4936077 \\
+WJetsToLNu\tus{}HT-400to600\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8				& 48.91	& 4640594 \\
+WJetsToLNu\tus{}HT-600to800\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8				& 12.05	&  3984529\\
+WJetsToLNu\tus{}HT-800to1200\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8				& 5.501	&  1574633\\
+WJetsToLNu\tus{}HT-1200to2500\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8				& 1.329	& 255637 \\
+WJetsToLNu\tus{}HT-2500toInf\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8				& 0.03216	& 253036 \\
+%/WJetsToLNu\tus{}13TeV-madgraph-pythia8-tauola/										& 2.049E4	& 10017462 \\
+\hline
+WW\tus{}TuneCUETP8M1\tus{}13TeV-pythia8 & 118.7 & - \\
+WZ\tus{}TuneCUETP8M1\tus{}13TeV-pythia8 & 47.13 & - \\
+ZZ\tus{}TuneCUETP8M1\tus{}13TeV-pythia8 & 16.523 & - \\
+\hline
+ZJetsToNuNu\tus{}HT-100To200\tus{}13TeV-madgraph & 280.35 & - \\
+ZJetsToNuNu\tus{}HT-200To400\tus{}13TeV-madgraph & 77.67 & - \\
+ZJetsToNuNu\tus{}HT-400To600\tus{}13TeV-madgraph & 10.73 & - \\
+ZJetsToNuNu\tus{}HT-600ToInf\tus{}13TeV-madgraph & 4.116 & - \\
+\hline
+ZH\tus{}HToBB\tus{}ZToNuNu\tus{}M-125\tus{}13TeV\tus{}powheg-herwigpp & 0.501 & - \\
+\hline
+
+
+\hline
+%DYJetsToLL\tus{}M-50\tus{}HT-100to200\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8/ &	194.3$\times$1.21 	& 4054159	 \\
+%DYJetsToLL\tus{}M-50\tus{}HT-200to400\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8/ &	52.24$\times$1.21 	& 4666496	 \\
+%DYJetsToLL\tus{}M-50\tus{}HT-400to600\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8/ &	6.546$\times$1.21 	& 4931372	 \\
+%DYJetsToLL\tus{}M-50\tus{}HT-600toInf\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8/ &	2.179$\times$1.21 	& 4493574 \\
+DYJetsToLL\tus{}M-50\tus{}HT-100to200\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8 &	147.4 	& 4054159	 \\
+DYJetsToLL\tus{}M-50\tus{}HT-200to400\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8 &	40.99 	& 4666496	 \\
+DYJetsToLL\tus{}M-50\tus{}HT-400to600\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8 &	5.678 	& 4931372	 \\
+DYJetsToLL\tus{}M-50\tus{}HT-600toInf\tus{}TuneCUETP8M1\tus{}13TeV-madgraphMLM-pythia8 &	2.198 	& 4493574 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htb]\centering
+\caption{K-factors for the V+jets samples from Ref.~\cite{AN-2015-186}. \label{tab:kfactors}}
+\begin{tabular}{lc}
+ \hline
+ Dataset & k-factor \\
+ \hline
+DYJetsToLL\_M-50\_HT-100to200 & 1.588 \\
+DYJetsToLL\_M-50\_HT-200to400 & 1.438 \\
+DYJetsToLL\_M-50\_HT-400to600 & 1.494 \\
+DYJetsToLL\_M-50\_HT-600toInf & 1.139 \\
+\hline
+ZJetsToNuNu\_HT-100To200 & 1.626 \\
+ZJetsToNuNu\_HT-200To400 & 1.617 \\
+ZJetsToNuNu\_HT-400To600 & 1.459 \\
+ZJetsToNuNu\_HT-600ToInf & 1.391 \\
+\hline
+WJetsToLNu\_HT-100To200 & 1.459 \\
+WJetsToLNu\_HT-200To400 & 1.434 \\
+WJetsToLNu\_HT-400To600 & 1.532 \\
+WJetsToLNu\_HT-600ToInf & 1.004 \\
+%WJetsToLNu\_HT-600To800 &  \\                                                                                                                                                  
+%WJetsToLNu\_HT-800To1200 &  \\                                                                                                                                                 
+%WJetsToLNu\_HT-1200To2500 &  \\                                                                                                                                                
+%WJetsToLNu\_HT-2500ToInf &  \\                                                                                                                                                 
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{figure}[!htb]
+ \centering
+   \includegraphics[width=.75\textwidth]{Figures/signal-model/EWK.pdf}
+ \caption{Electroweak corrections for the \Z (green line) and \PW boson (purple line) as a function of the transverse momentum~\cite{Kallweit:2015dum}.}
+ \label{fig:ewk}
+\end{figure}
+	 
+
+For first round of analysis private signal samples were  produced using \MADGRAPH5 2.3.2.2 \cite{bib:MADGRAPH} while hadronization and
+ fragmentation are handled by \PYTHIA8 \cite{bib:PYTHIA}. Since \MADGRAPH can't handle the Higgs boson decay branching ratios properly, the Higgs boson produced in association with dark matter 
+candidate is remained undecayed when \MADGRAPH generates the event and later decayed by the \PYTHIA. These samples are used to perform the preliminary physics 
+analysis till official signal samples 
+are available. However the official samples are also produced in similar manner with same configurations. 
+We considered primarily Two Higgs Doublet Model. For the first sensitivity studies samples are produced with  $M_{A0}$ = 300 GeV but for the final 
+publication a more detailed scan will be performed. 
+
+\begin{table}[htbp]
+\footnotesize
+\centering 
+\begin{tabular}{lrr}
+\hline
+\textbf{Model Parameter}  & \textbf{Explanation} & \textbf{Parameter Value} \\
+\hline
+\hline
+$M_{A0}$      & mass of the pseudoscalar  &  300 GeV\\
+              & higgs boson which decays into        &    \\
+              & 2 dark matter candidates             &    \\
+\hline
+$g_{z}$       & coupling constant between            &  0.8    \\
+              &  $A_{0}$ and dark matter             &       \\
+\hline
+$M_{\chi}$    & mass of the dark matter candidate &  100 GeV \\
+\hline
+$M_{Z`}$      & mass of the $Z'$ &  600--2500 GeV \\
+\hline
+tan$\beta$    & $v_{u}/v_{d}$, ratio of vacuum expectation &  1 \\
+   & values of Higgs doublet after &  \\
+  &  electroweak symmetry breaking &  \\
+\hline
+\hline
+\end{tabular}
+\caption{Parameter values used for 2HDM Model to generate the signal samples.}
+\label{tab:modelparameters}
+\end{table}
+
+\subsection{Signal Samples \label{sec:sigSamp}}
+This analysis focuses on medium and high mass region (600 GeV to 2.5 TeV). A detailed LHE level study was performed in order to find the benchmark parameter values. The parameter 
+values used for first study is shown in Table \ref{tab:modelparameters}. Figure~\ref{fig:lhemass} shows the distribution of the Z' mass (left) and invariant mass of the Higgs 
+boson (right) using the LHE level information for three mass points, $M_{Z'}$ = 600, 1000, 1400 GeV. In Figure~\ref{fig:lheMETAndHpT} shows the transverse momentum of the 
+pseudoscalar, $A_{0}$ (left) (this decays in pair of dark matter and appears as missing transverse energy in the detector) and the Higgs boson (right). The transverse 
+momentum of $A_{0}$ increases with increase in the Z' mass which is main observable for dark matter searches and help in distinguishing from standard model backgrounds. 
+Figure~\ref{lhe:DRMT} shows the distribution of two b-quarks from the Higgs boson decay (left) and transverse mass of the Z' (right). As transverse momentum of the Higgs boson 
+increases the decay products i.e. two b-quarks tend to come closer to each other and roughly follow the expression~\ref{eqn:DeltaR}.
+
+\begin{equation}   
+\Delta R = 2 \times \frac{M_{H}}{p_{H}}
+\label{eqn:DeltaR} 
+\end{equation}
+
+This is confirmed in  Fig.~\ref{fig:effVsPt} where one can see the efficiency of reconstructing a higgs boson candidate matched to decay products of higgs boson at 
+generation level as function of $p_{T}$ of the higgs boson itself for the two cases : 
+\begin{enumerate}
+\item  two resolved AK04 jets are reconstructed, and
+\item  one AK08 jets is reconstructed when both the b-jets from higgs boson decay are merged together. 
+\end{enumerate}
+As the figure shows the crossing point for these two higgs reconstruction approach is at $p_{T}$ $\approx$ 500 GeV, which translate to  mass of 1 TeV for the Z' candidate.
+ This lead to two different analysis 
+approach based on transverse momentum of the Higgs boson which in turn depends on the mass of Z' and will be discussed later in the section [XYZ]. Therefore for $M_{Z'}$ = 600 GeV,
+ 800 GeV and 1000 GeV 2 resolved jets are used to reconstruct the higgs boson and for $M_{Z'}$ $>$ 1000 GeV AK08 jet is used to reconstruct the merged decay products. 
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.49\textwidth]{Figures/signal-model/Mzp.pdf}
+\includegraphics[width=0.49\textwidth]{Figures/signal-model/Mhiggs.pdf}
+\caption{Invariant mass distribution of the resonance ($M_{Z'}$) on left for mass point 600 GeV, 1000 GeV and 1400 GeV for two dark matter mass points. The shape of mass is independent of the dark matter mass. Right shows the mass of the higgs boson for different $M_{Z'}$. }
+\label{fig:lhemass}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.49\textwidth]{Figures/signal-model/A0_Pt.pdf}
+\includegraphics[width=0.49\textwidth]{Figures/signal-model/Higgs_Pt.pdf}
+\caption{Left shows the transverse momentum of the pseudo-scalar higgs boson ($A^{0}$) which decays into pair of dark matter particle and hence becomes missing transverse 
+energy and right shows the transverse momentum of the higgs boson for $M_{Z'}$ = 600 GeV, 1000 GeV and 1400 GeV with two dark matter mass point. }
+\label{fig:lheMETAndHpT}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.49\textwidth]{Figures/signal-model/bb_dR.pdf}
+\includegraphics[width=0.49\textwidth]{Figures/signal-model/Zp_Mt.pdf}
+\caption{Left shows the $\Delta R$ between the decay products of the SM higgs boson (b and $\bar{b}$) and right shows transverse mass of the Z' for $M_{Z'}$ = 600 GeV, 1000 GeV and 1400 GeV with two dark matter mass point. The shape of distribution are invariant under change of dark matter mass and only the cross-section changes.}
+\label{lhe:DRMT}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{Figures/signal-model/jetrec_myDefinition.pdf}
+\caption{Efficiency of reconstructing a Higgs boson candidates as function of pt of the generated Higgs boson with two resolved AK04 jets vs one AK08 jet.}
+\label{fig:effVsPt}
+\end{figure}
+
+\newpage
+
+\subsection{Background}
+All physics processes yielding final states with two b-tagged resolved jets or sub-jets inside a fat-jet in association with a large missing transverse momentum 
+have to be considered as possible sources of background for the analysis. The complete list of background datasets considered for the analysis is presented in 
+Table~\ref{tab:MonoHSamples},  where the cross section used to normalize SM backgrounds
+measured by CMS and/or calculated at (N)NLO by the Standard Model Cross Section Working
+Group \cite{smcross-sectwiki} are also reported along with the total statistics of the simulated sample. 
+
+\begin{itemize}
+\item {\bf Z$\rightarrow \nu\nu$ + Jets}  : This represents the irreducible background for mono-H signal given the large missing transverse energy from invisible decay 
+  of the Z boson in association with jets. Before applying the b-quark tagging,  the contribution from $udscg$ (light) partons dominates, while after application of the b-tagging 
+  the primary contribution is from $Z+b\bar{b}$. This Z+Jets background is produced in several samples binned in HT (sum of transverse momentum of the hadrons at LHE level) starting
+  from 100 GeV using the \MADGRAPH LO generator. The contribution of events with HT less than 100 GeV is found to be negligible after applying the selection of missing transverse 
+  energy higher than 200 GeV (and transverse momentum of fat-jet higher than 200 GeV for the boosted jet case.)
+  
+\item {\bf W+Jets} : W+Jets is second dominant background after irreducible $Z \rightarrow \nu\nu$+$Jets$ background. 
+  Leptonic decays of W boson in association with high $p_{T}$ jets can mimic the signal because of following two reasons:
+  \begin{enumerate}
+  \item Acceptance and reconstruction : lepton from the decay of W boson  is not reconstruction because of detector in-efficiency i.e. very soft lepton, too less hits/deposits in 
+    the tracker/muon system/detector, a certain part of the sub-detector is not functioning at that time. The lepton is not within the acceptance of the detector fudicial region 
+e.g. an electron can't be reconstructed if it has $|\eta|$ $>$ 2.5 whereas a muon can't be reconstructed if its $|\eta|$ $>$ 2.4 due to muon system coverage.
+\item Identification and isolation : The lepton from the the decay of W boson is not clean i.e. has activity around it because of pile-up or additional jets present in the
+  vicinity of the lepton.
+  \end{enumerate}
+
+\item {\bf $t \bar{t}$} : $t \bar{t}$ another reducible background which can mimic the signal specially for semi-leptonic $t \bar{t}$ decays, when one of the W boson from top 
+decays into lepton + $\nu$ and another W boson decays into pair of quarks. The system has two real b-jets coming from the decays of top quark and hence becomes a background 
+for the analysis when invariant mass of the two b-jets system lie in the higgs boson mass window. Generator level studies shows that $t \bar{t}$ becomes more prominent when 
+W decays into tau lepton which further decays into hadrons or lepton in association with neutrino(s). Figure \ref{ttbardecaymodes} shows the background fraction from each of the 
+$t \bar{t}$ decay-mode. 
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.99\textwidth]{Figures/FullSelection/ttbardecaymode.png}
+\caption{Fraction of background for each of the decay mode of $t \bar{t}$ when full selection is applied for the boosted-jet analysis.}
+\label{ttbardecaymodes}
+\end{figure}
+

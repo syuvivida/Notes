@@ -1,0 +1,64 @@
+\section{Data and simulated samples}
+
+The analysis is performed using the proton-proton collision data at 
+$\sqrt{s} = \unit{13}{\TeV}$ collected by the CMS experiment at the CERN 
+Large Hadron Collider (LHC) during 2015, corresponding to an integrated 
+luminosity of 2.2~\fbinv. 
+
+\MADGRAPH5 2.3.2.2~\cite{bib:MADGRAPH} is used to generate the mono Higgs 
+signal predicted by the two Higgs doublet model (2HDM).
+
+a model with a $\Zprime$ boson with
+the same left- and right-handed coupling to fermions as the SM $Z$ boson,
+and masses between $500\GeV$ and $4\TeV$, was implemented.
+Higher-order parton radiations are calculated 
+for up to three extra partons at tree-level.
+The $\Zprime$ boson is set to decay into
+a $\ttbar$ pair in all generated events.
+The width of the resonances is set to
+both $1\%$ and $10\%$ of the $\Zprime$ boson mass.
+For the $\Zprime$ boson mass points of $1$, $2$, $3$, and $4\TeV$,
+additional samples with a resonance width of $30\%$ have been generated.
+The parton showering is modeled with \PYTHIA~8.2~\cite{Sjostrand:2006za,Sjostrand:2014zea},
+the MLM algorithm~\cite{mlm} is used for the matching. 
+
+\PYTHIA~8.2 is used to generate a
+Kaluza--Klein excitation of a gluon
+which also results in a $\ttbar$ resonance production. 
+Kaluza--Klein gluon excitations are generated with resonance masses between $500\GeV$ and $4\TeV$.
+The branching ratio of the resonance state into top quark pairs is about $94\%$,
+$6\%$ of the generated KK gluons decay into light quarks (mostly b quark pairs).
+The branching ratios depend on the specific Kaluza--Klein coupling parameters. 
+For the studied model, the respective \PYTHIA parameters are set to
+the default values in \PYTHIA,
+except the coupling of the Kaluza--Klein gluon
+to right-handed top quarks which has been set to a value of 5.
+
+Top quark pair events, produced via the strong interaction,
+and electroweak production of single top quarks in the tW channel
+are generated with the next-to-leading-order generator
+\POWHEG~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd,Frixione:2007nw,Re:2010bp}.
+The s- and t-channel processes of single top quark production
+are generated with \aMCATNLO~\cite{Alwall:2014hca}.
+All samples are interfaced to \PYTHIA~8.2 for the showering. 
+
+$\W$ and $\Z$ boson productions in association with jets have been produced with \MADGRAPH~v5.2.
+The MLM matching scheme is used to interface them with the shower generated with \PYTHIA.
+Up to four additional partons in the matrix element are included.
+%The $\W$ and $\Z$ boson samples are binned in $\HT$, where $\HT$ is the summed momentum of all final state partons in the matrix element.
+%Alternative samples for $\W$ and $\Z$ boson production have been processed with aMC@NLO.
+%These samples are inclusive and not binned in $\HT$. 
+%The matching to the parton shower with \PYTHIA is performed with the FXFX merging algorithm~\cite{Frederix:2012ps}.
+%Up to two additional jets are included in the matrix element.
+Diboson processes ($\W\W$, $\W\Z$ and $\Z\Z$) are generated
+with \PYTHIA for matrix element and showering.
+
+All events were generated at the center of mass 
+energy of $13\TeV$ and use the NNPDF~3.0 PDF sets~\cite{Ball:2014uwa}.
+In the parton shower generated with \PYTHIA, the underlying event tune CUETP8M1 has been used.
+All simulated samples include the simulation of additional inelastic proton-proton interactions
+within the same bunch crossing (``in-time pileup'') and the simulation
+of additional contribution in the signal readout from the previous and next bunch crossing (``out-of-time pileup'')
+which are assumed to be $25\,\text{ns}$ apart from the main bunch crossing.
+%The resolution and efficiencies for reconstructed objects are corrected
+%to match the ones measured in data.
